@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Java Cheatsheet</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Courier New", monospace;
+            }
+
+            body {
+                background: #0d1117; 
+                color: #c9d1d9;
+                padding: 20px;
+            }
+
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #161b22;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                color: #58a6ff;
+            }
+
+            header p {
+                font-size: 1.2rem;
+                color: #8b949e;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 20px;
+            }
+
+            .card {
+                background: #161b22;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+                position: relative;
+            }
+
+            .card h2 {
+                margin-bottom: 15px;
+                font-size: 1.5rem;
+                text-align: center;
+                color: #f78166;
+            }
+
+            .card-header {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                gap: 8px;
+            }
+
+            .circle {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+            }
+
+            .red {
+                background-color: #ff5f57;
+            }
+            .yellow {
+                background-color: #ffbd2e;
+            }
+            .green {
+                background-color: #28c840;
+            }
+
+            .code {
+                background: #0d1117;
+                color: #c9d1d9;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                border: 1px solid #30363d;
+                font-family: "Courier New", monospace;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .keyword {
+                color: #58a6ff;
+            }
+            .string {
+                color: #f78166;
+            } 
+            .comment {
+                color: #8b949e;
+            } 
+            .datatype {
+                color: #3fb950;
+            } 
+            .method {
+                color: #d29922;
+            } 
+            .default {
+                color: #c9d1d9;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Java Cheatsheet</h1>
+            <p>A quick reference for Java programming</p>
+        </header>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <h2>Basics</h2>
+                <pre class="code">
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="default">ClassName</span> {
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="method">main</span>(<span class="datatype">String</span>[] args) {
+        <span class="method">System.out</span>.<span class="method">println</span>(<span class="string">"Hello, World!"</span>);
+    }
+}
+<span class="comment">// Single-line comment</span>
+<span class="comment">/* Multi-line comment */</span>
+<span class="comment">\n (newline)</span>
+<span class="comment">\t (tab)</span>
+            </pre>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <h2>Data Types</h2>
+                <pre class="code">
+<span class="datatype">int</span> num = <span class="default">10</span>;         <span class="comment">// Integer</span>
+<span class="datatype">double</span> pi = <span class="default">3.14</span>;     <span class="comment">// Floating point</span>
+<span class="datatype">char</span> letter = <span class="string">'A'</span>;    <span class="comment">// Character</span>
+<span class="datatype">boolean</span> flag = <span class="keyword">true</span>;  <span class="comment">// Boolean</span>
+<span class="datatype">String</span> text = <span class="string">"apple"</span> <span class="comment">// String</span>
+
+    <span class="comment">// Useful String Methods</span>
+• startsWith(<span class="string">"A"</span>)
+• endsWith(<span class="string">"A"</span>)
+• length()
+• indexOf(<span class="string">"A"</span>)
+• replace(<span class="string">"A", "B"</span>)
+• toUpperCase()
+• toLowerCase()
+            </pre>
+            </div>
+            
+            <div class="card">
+              <div class="card-header">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+              </div>
+              <h2>Arrays</h2>
+              <pre class="code">
+<span class="comment">// Creating and intializing an array of 5 elements</span>
+<span class="keyword">int</span>[] numbers = <span class="keyword">new </span><span class="method">int</span>[3];
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+
+<span class="comment">// Shortcut</span>
+<span class="keyword">int</span>[] numbers = { 10, 20, 30};
+              </pre>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <h2>Control Flow</h2>
+                <pre class="code">
+<span class="keyword">if</span> (condition) {
+    <span class="comment">// Code</span>
+} <span class="keyword">else</span> {
+    <span class="comment">// Code</span>
+}
+
+<span class="keyword">switch</span> (value) {
+    <span class="keyword">case</span> <span class="default">1</span>:
+        <span class="comment">// Code</span>
+        <span class="keyword">break</span>;
+    <span class="keyword">default</span>:
+        <span class="comment">// Code</span>
+}
+            </pre>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <h2>Loops</h2>
+                <pre class="code">
+<span class="keyword">for</span> (<span class="datatype">int</span> i = <span class="default">0</span>; i < <span class="default">5</span>; i++) {
+    <span class="comment">// Code</span>
+}
+
+<span class="keyword">while</span> (condition) {
+    <span class="comment">// Code</span>
+}
+
+<span class="keyword">do</span>{
+    <span class="comment">// Code</span>
+}<span class="keyword">while</span>(condition);
+            </pre>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+                <h2>Reading Inputs</h2>
+                <pre class="code">
+<span class="keyword">import</span> java.util.Scanner; <span class="comment">//Import the scanner class</span>
+ 
+<span class="keyword">public class</span>  ClassName{
+<span class="keyword">public static void</span><span class="method"> main</span>(<span class="datatype">String</span>[] agrs) 
+     <span class="comment">// Create a Scanner object</span>
+<span class="keyword">Scanner </span>input = <span class="keyword">new</span><span class="method"> Scanner</span>(System.in);
+
+     <span class="comment">// Reading different types of inputs</span>
+<span class="keyword">int</span> num = input nextInt();            <span class="comment">// For integers</span>
+<span class="keyword">double</span> decimal = input nextDouble(); <span class="comment"> // For decimals</span>
+<span class="keyword">String</span> text = input next();           <span class="comment">// For a single word</span>
+<span class="keyword">String</span> text = input nextLine();       <span class="comment">// For an entire line</span>
+
+     <span class="comment">// Close the Scanner</span>
+input.close();
+    }
+}
+      </pre>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+              </div>
+              <h2>Arithmetic Expressions</h2>
+              <pre class="code">
+<span class="keyword">int</span> x = 10 + 3;
+<span class="keyword">int</span> x = 10 - 3;
+<span class="keyword">int</span> x = 10 * 3;
+<span class="keyword">int</span> x = 10 / 3;                  <span class="comment">// returns an int</span>
+<span class="keyword">int</span> x = (float)10 / 3 (float)3;  <span class="comment">// return a float</span>
+<span class="keyword">int</span> x = 10 % 3;                  <span class="comment">// modulus (reamaider of division)</span>
+              </pre>
+            </div>
+<div class="card">
+  <div class="card-header">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+  <h2>Operators</h2>
+  <pre class="code">
+<span class="comment">// Arithmetic Operators</span>
++   <span class="comment">// Addition</span>
+-   <span class="comment">// Subtraction</span>
+*   <span class="comment">// Multiplication</span>
+/   <span class="comment">// Division</span>
+%   <span class="comment">// Modulus (remainder)</span>
+
+<span class="comment">// Relational (Comparison) Operators</span>
+==  <span class="comment">// Equal to</span>
+!=  <span class="comment">// Not equal to</span>
+>   <span class="comment">// Greater than</span>
+<   <span class="comment">// Less than</span>
+>=  <span class="comment">// Greater than or equal to</span>
+<=  <span class="comment">// Less than or equal to</span>
+
+<span class="comment">// Logical Operators</span>
+&&  <span class="comment">// Logical AND</span>
+||  <span class="comment">// Logical OR</span>
+!   <span class="comment">// Logical NOT</span>
+
+<span class="comment">// Bitwise Operators</span>
+&   <span class="comment">// AND</span>
+|   <span class="comment">// OR</span>
+^   <span class="comment">// XOR</span>
+~   <span class="comment">// Complement</span>
+<<  <span class="comment">// Left shift</span>
+>>  <span class="comment">// Right shift</span>
+>>> <span class="comment">// Unsigned right shift</span>
+
+<span class="comment">// Unary Operators</span>
++   <span class="comment">// Unary plus</span>
+-   <span class="comment">// Unary minus</span>
+++  <span class="comment">// Increment</span>
+--  <span class="comment">// Decrement</span>
+
+<span class="comment">// Assignment Operators</span>
+=   <span class="comment">// Assignment</span>
++=  <span class="comment">// Add and assign</span>
+-=  <span class="comment">// Subtract and assign</span>
+*=  <span class="comment">// Multiply and assign</span>
+/=  <span class="comment">// Divide and assign</span>
+%=  <span class="comment">// Modulus and assign</span>
+&=  <span class="comment">// Bitwise AND and assign</span>
+|=  <span class="comment">// Bitwise OR and assign</span>
+^=  <span class="comment">// Bitwise XOR and assign</span>
+<<= <span class="comment">// Left shift and assign</span>
+>>= <span class="comment">// Right shift and assign</span>
+>>>=<span class="comment">// Unsigned right shift and assign</span>
+
+<span class="comment">// Conditional Operator (Ternary)</span>
+? : <span class="comment">// Condition ? true : false</span>
+  </pre>
+</div>
+        </div>
+
+        <footer style="text-align: center; margin-top: 20px; color: #8b949e">
+            &copy; 2024 Java Cheatsheet | Designed by R.D.
+        </footer>
+    </body>
+</html>
