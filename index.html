@@ -1,135 +1,180 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Java Cheatsheet</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: "Courier New", monospace;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Cheatsheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Courier New", monospace;
+        }
 
-            body {
-                background: #0d1117; 
-                color: #c9d1d9;
-                padding: 20px;
-            }
+        body {
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 20px;
+        }
 
-            header {
-                text-align: center;
-                padding: 20px;
-                background-color: #161b22;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-            }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #161b22;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
 
-            header h1 {
-                font-size: 2.5rem;
-                margin-bottom: 10px;
-                color: #58a6ff;
-            }
+        header::before,
+        header::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            z-index: -1;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            background: linear-gradient(
+                45deg,
+                #ffff00,
+                #00ff00,
+                #0099ff,
+                #001aff,
+                #a200ff,
+                #ff0055,
+                #ff0000
+            );
+            background-size: 300%;
+            animation: border 12s linear infinite;
+            border-radius: 10px;
+        }
 
-            header p {
-                font-size: 1.2rem;
-                color: #8b949e;
-            }
+        header::after {
+            filter: blur(30px);
+        }
 
-            .container {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 20px;
-            }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #58a6ff;
+        }
 
-            .card {
-                background: #161b22;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-                position: relative;
-            }
+        header p {
+            font-size: 1.2rem;
+            color: #8b949e;
+        }
 
-            .card h2 {
-                margin-bottom: 15px;
-                font-size: 1.5rem;
-                text-align: center;
-                color: #f78166;
-            }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
 
-            .card-header {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                display: flex;
-                gap: 8px;
-            }
+        .card {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
 
-            .circle {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-            }
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+            color: #f78166;
+        }
 
-            .red {
-                background-color: #ff5f57;
-            }
-            .yellow {
-                background-color: #ffbd2e;
-            }
-            .green {
-                background-color: #28c840;
-            }
+        .card-header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 8px;
+        }
 
-            .code {
-                background: #0d1117;
-                color: #c9d1d9;
-                padding: 15px;
-                border-radius: 5px;
-                overflow-x: auto;
-                border: 1px solid #30363d;
-                font-family: "Courier New", monospace;
-                font-size: 1rem;
-                line-height: 1.5;
-            }
+        .circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
 
-            .keyword {
-                color: #58a6ff;
-            }
-            .string {
-                color: #f78166;
-            } 
-            .comment {
-                color: #8b949e;
-            } 
-            .datatype {
-                color: #3fb950;
-            } 
-            .method {
-                color: #d29922;
-            } 
-            .default {
-                color: #c9d1d9;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Java Cheatsheet</h1>
-            <p>A quick reference for Java programming</p>
-        </header>
+        .red {
+            background-color: #ff5f57;
+        }
 
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <div class="circle red"></div>
-                    <div class="circle yellow"></div>
-                    <div class="circle green"></div>
-                </div>
-                <h2>Basics</h2>
-                <pre class="code">
+        .yellow {
+            background-color: #ffbd2e;
+        }
+
+        .green {
+            background-color: #28c840;
+        }
+
+        .code {
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #30363d;
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .keyword {
+            color: #58a6ff;
+        }
+
+        .string {
+            color: #f78166;
+        }
+
+        .comment {
+            color: #8b949e;
+        }
+
+        .datatype {
+            color: #3fb950;
+        }
+
+        .method {
+            color: #d29922;
+        }
+
+        .default {
+            color: #c9d1d9;
+        }
+
+        @keyframes border {
+            0%, 100% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 300%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Java Cheatsheet</h1>
+    <p>A quick reference for Java programming</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="circle red"></div>
+            <div class="circle yellow"></div>
+            <div class="circle green"></div>
+        </div>
+        <h2>Basics</h2>
+        <pre class="code">
 <span class="keyword">public</span> <span class="keyword">class</span> <span class="default">ClassName</span> {
     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="method">main</span>(<span class="datatype">String</span>[] args) {
         <span class="method">System.out</span>.<span class="method">println</span>(<span class="string">"Hello, World!"</span>);
@@ -250,6 +295,7 @@ numbers[2] = 30;
      <span class="comment">// Reading different types of inputs</span>
 <span class="keyword">int</span> num = input nextInt();            <span class="comment">// For integers</span>
 <span class="keyword">double</span> decimal = input nextDouble(); <span class="comment"> // For decimals</span>
+<span class="keyword">char</span> letter = input next() charAt(0); <span class="comment">// For single letter</span>
 <span class="keyword">String</span> text = input next();           <span class="comment">// For a single word</span>
 <span class="keyword">String</span> text = input nextLine();       <span class="comment">// For an entire line</span>
 
@@ -341,5 +387,5 @@ input.close();
         <footer style="text-align: center; margin-top: 20px; color: #8b949e">
             &copy; 2024 Java Cheatsheet | Designed by R.D.
         </footer>
-    </body>
+</body>
 </html>
