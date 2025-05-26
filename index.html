@@ -26,17 +26,17 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
             position: relative;
+            z-index: 1;
         }
 
-        header::before,
-        header::after {
+        header::before {
             content: '';
             position: absolute;
             top: -5px;
             left: -5px;
+            right: -5px;
+            bottom: -5px;
             z-index: -1;
-            width: calc(100% + 10px);
-            height: calc(100% + 10px);
             background: linear-gradient(
                 45deg,
                 #ffff00,
@@ -45,15 +45,24 @@
                 #001aff,
                 #a200ff,
                 #ff0055,
-                #ff0000
+                #ff0000,
+                #ffff00
             );
-            background-size: 300%;
-            animation: border 12s linear infinite;
-            border-radius: 10px;
+            background-size: 400% 400%;
+            animation: spin 4s linear infinite;
+            border-radius: 12px;
         }
 
         header::after {
-            filter: blur(30px);
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: #161b22;
+            border-radius: 10px;
         }
 
         header h1 {
@@ -150,12 +159,12 @@
             color: #c9d1d9;
         }
 
-        @keyframes border {
-            0%, 100% {
-                background-position: 0 0;
+        @keyframes spin {
+            0% {
+                background-position: 0% 50%;
             }
-            50% {
-                background-position: 300%;
+            100% {
+                background-position: 100% 50%;
             }
         }
     </style>
